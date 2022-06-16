@@ -55,14 +55,14 @@ const App =() => {
       setFavourites(newFavouriteList);
       saveToLocalStorage(newFavouriteList);
   }
-  
+
 
   // render the result
   return (
     <div className='container-fluid movie-app'>
 
       <div className='row d-flex align-items-center mt-4 mb-4'>
-        <MovieListHeading heading='Movies' />
+        <MovieListHeading heading='Movies Listing' />
         <SearchBox searchValue={searchValue} 
           setSearchValue={setSearchValue} 
         />

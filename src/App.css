@@ -1,6 +1,6 @@
 body {
   background-color: transparent;
-  background: #232b3b;
+  background: linear-gradient(to left, rgba(7,27,82,1) 0%, rgba(0,128,128,1) 100%);
   /* opacity: 0.3; */
   color: #f7f7f7;
   font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
@@ -27,9 +27,9 @@ body {
 
 .overlay {
   position: absolute;
-  background: rgb(191, 191, 207);
+  background: linear-gradient(to left, rgb(156, 173, 219) 0%, rgb(6, 20, 20) 100%);
   width: 100%;
-  transition: 0.5s ease;
+  transition: 0.8s ease;
   opacity: 0;
   bottom: 0;
   font-size: 20px;
