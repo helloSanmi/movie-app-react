@@ -7,12 +7,16 @@ import SearchBox from './components/SearchBox';
 import AddFavourites from './components/AddFavourites';
 import RemoveFavourites from './components/RemoveFavourites';
 
-function App() {
+
+
+const App =() => {
 
   const [movies, setMovies] = useState([]);
   const [searchValue, setSearchValue] = useState('');
   const [favourites, setFavourites] = useState([]);
 
+
+  // generate an API request
   const getMovieRequest = async (searchValue) => {
     const url = `http://www.omdbapi.com/?s=${searchValue}&apikey=532f958d`;
 
@@ -24,16 +28,20 @@ function App() {
     }
   };
 
+
+  // retrieve the user serchvalue from the API
   useEffect(() => {
     getMovieRequest(searchValue);
   }, [searchValue]);
 
 
+  // save to local storage
   const saveToLocalStorage = (items) => {
     localStorage.setItem('react-movie-app-favourites', JSON.stringify(items));
   };
   
 
+  // add selected movie to favourite array
   const AddFavouriteMovie = (movie) => {
     const newFavouriteList = [...favourites, movie];
     setFavourites(newFavouriteList);
@@ -47,7 +55,9 @@ function App() {
       setFavourites(newFavouriteList);
       saveToLocalStorage(newFavouriteList);
   }
+  
 
+  // render the result
   return (
     <div className='container-fluid movie-app'>
 
